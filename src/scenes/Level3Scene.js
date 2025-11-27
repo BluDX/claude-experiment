@@ -5,6 +5,7 @@ import Goomba from '../entities/Goomba.js';
 import FlyingEnemy from '../entities/FlyingEnemy.js';
 import PowerUp from '../entities/PowerUp.js';
 import LevelManager from '../utils/LevelManager.js';
+import HUD from '../utils/HUD.js';
 
 export default class Level3Scene extends Phaser.Scene {
   constructor() {
