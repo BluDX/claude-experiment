@@ -142,12 +142,16 @@ export default class Level3Scene extends Phaser.Scene {
 
     // Add physics for collision detection
     this.physics.add.existing(this.goal);
+    this.levelCompleting = false; // Flag to prevent multiple calls
     this.physics.add.overlap(this.player, this.goal, () => {
-      this.levelComplete();
+      if (!this.levelCompleting) {
+        this.levelComplete();
+      }
     });
   }
 
   levelComplete() {
+    this.levelCompleting = true; // Prevent multiple calls
     // All levels complete - go to victory screen!
     this.scene.start(SCENES.VICTORY);
   }
